@@ -1,0 +1,66 @@
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+
+
+                <div class="col-lg-8 my-3">
+                    <h1 class="text-center">Cadastrar ou logar</h1>
+                    <p class="text-center lead">Faça login ou crie uma conta no link abaixo.</p>
+
+                    <div class="row">
+                        <div class="col-lg">
+                            <h4>Faça seu cadastro</h4>
+                            <p>Se você ainda não tem conta, preencha o formulário abaixo:</p>
+
+                            <form action="/login/register" method="POST">
+                                <input type="hidden" name="_csrf" value=<%=csrfToken%>>
+                                <div class=" form-group mb-1">
+                                    <label class="form-label">Seu e-mail:</label>
+                                    <input type="email" class="form-control" name="email"
+                                        placeholder="example@email.com">
+                                </div><br>
+                                <div class="form-group mb-1">
+                                    <label class="form-label">Digite uma senha:</label>
+                                    <input type="password" class="form-control" name="password"
+                                        placeholder="example@email.com">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Criar</button>
+                            </form>
+                        </div>
+
+
+                        <div class="col-lg">
+                            <h4>Faça seu login</h4>
+                            <p>Se você já possui uma conta, faça o login abaixo:</p><br>
+
+                            <form action="/login/login" method="POST">
+                                <input type="hidden" name="_csrf" value=<%=csrfToken%>>
+                                <div class="form-group mb-1">
+                                    <label class="form-label">Seu e-mail:</label>
+                                    <input type="email" class="form-control" name="email"
+                                        placeholder="example@email.com">
+                                </div><br>
+                                <div class="form-group mb-1">
+                                    <label class="form-label">Digite sua senha:</label>
+                                    <input type="password" class="form-control" name="password"
+                                        placeholder="example@email.com">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Entrar</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-2"></div>
+        </div>
+        </div>
+
+        <%- include('includes/footer')%>
